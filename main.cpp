@@ -1,30 +1,33 @@
-// ¿Recuerdas qué hace iostream?
 #include <iostream>
-
-// ¿Por qué este include usa comillas y no < >?
 #include "utilerias.h"
 
-// ¿por qué debe existir la función main()?
 int main() {
-    // 1. Variables (siempre inicializadas)
-    //    TODO: ¿qué variables necesitas? ¿De qué tipo? ¿Con qué valor empiezan?
+    std::cout << "Area y peri`metro de un rectangulo\n";
 
-    std::cout << "Area y perimetro de un rectangulo\n";
+    double altura;
+    double base;
+    double Perimetro;
+    double Area;
 
-    // 2. Entrada: el ancho
-    //    TODO: lee el ancho con leerDecimal("...")
-    //    TODO: ¿qué haces si es 0 o negativo? ¿Cuántas veces lo vuelves a pedir?
+    std::cout << "Introduce la base: ";
+    std::cin >> base;
+    while (base <= 0) {
+        std::cout << "Numero invalido. Introduce un valor positivo: ";
+        std::cin >> base;
+    }
 
-    // 3. Entrada: el alto
-    //    TODO: mismo criterio que el ancho
+    std::cout << "Introduce la altura: ";
+    std::cin >> altura;
+    while (altura <= 0) {
+        std::cout << "Numero invalido. Introduce un valor positivo: ";
+        std::cin >> altura;
+    }
 
-    // 4. Proceso
-    //    TODO: calcula el área y el perímetro
-    //    ¿Estás seguro(a) del orden en que C++ hace las operaciones?
+    Area = base * altura;
+    Perimetro = 2 * (base + altura);
 
-    // 5. Salida
-    //    TODO: muestra el área y el perímetro, con sus unidades
+    std::cout << "El perimetro es: " << Perimetro << std::endl;
+    std::cout << "El area es: " << Area << std::endl;
 
-    // ¿Qué significa return 0;?
     return 0;
 }
